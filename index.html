@@ -3,35 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,700&displayswap"
-        rel="stylesheet"
-    >
-    <link rel="stylesheet" href="style.css">
+    <title>Bam Day</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            background: linear-gradient(135deg, #ffdde1, #90d5ec);
+            cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        .text {
+            position: absolute;
+            opacity: 1;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+            color: #ff4081;
+            text-shadow: 2px 2px 10px rgba(255, 64, 129, 0.5);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image {
+            position: absolute;
+            max-width: 200px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 10;
+        }
+
+        .main-content {
+            display: none;
+            text-align: center;
+            position: absolute;
+        }
+
+        h1 {
+            color: #ff4081;
+            text-shadow: 2px 2px 10px rgba(255, 64, 129, 0.5);
+            font-size: 2.5rem; /* Reduced font size */
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        #readyLink {
+            display: block;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #ff4081;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #readyLink:hover {
+            color: #ff69b4;
+        }
+
+        .next-content {
+            display: none;
+            font-size: 1.2rem;
+            color: #444;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	    max-width: 700px;
+        }
+
+.next-content p:first-child {
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.next-content p:nth-child(2) {
+    text-align: justify;
+    font-size: 1.2rem;
+    color: #444;
+    padding: 10px;
+}
+
+.next-content p:nth-last-child(2),
+.next-content p:last-child {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+    </style>
 </head>
-<body>
-    <div class = "card">
-        <div class="back"></div>
-        <div class="front">
-            <div class="heart-container">
-                <div class="heart-1"></div>
-                <div class="heart-2"></div>
-                <div class="heart-3"></div>
-            </div>
-        </div>
+<body onclick="moveText(); playMusic()">
+    <!-- Initial Interactive Text -->
+    <div id="text" class="text">Press me</div>
+    <img id="image" class="image" src="" alt="Memory" />
+    
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="photograph.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
-
-        <div class = "textContainer">
-            <p id="header">Happy Valentine's Day!</p>
-            <p>I love you my Valentine</p>
-            <p>BEBU BEST GIRL!!</p>
-            <p>-from baby bam and baby skye</p>
-        </div>
+    <!-- Main Content (hidden initially) -->
+    <div class="main-content" id="mainContent">
+        <h1>Happy 2nd Year Anniversary, Babu!</h1>
+        <p>I prepared something for you hehe</p>
+        <a id="readyLink">Ready?</a>
     </div>
-   
+
+    <div class="next-content" id="nextContent">
+	<p>Dearest Alyssa,</p>
+        <p>
+	Happy Bam Day!! Today marks our 2nd year anniversary or you’d prefer to call it 24 months or even 1 year and 12 months of babutime. We have been through a lot of experiences and I guess we can call it our long distance adventures. I am very thankful for the memories we have shared and of course I am looking forward sa mga future memories na magagawa pa natin. Bilis ng oras no? parang kelan lang nasa park pa tayo sa calumpit tapos biglang alis ka na dito then nag aadjust pa lang tayo at di natin alam pano mangyayari satin. Ngayon eto na tayo, 2 years na. Gusto kong malaman mo na sobrang thankful ako sa kung anong meron tayo ngayon, sa relationship natin hehe. Thank you sa mga efforts mo Bem. I always admired your knowledge and the way how you see the world, your views always refreshed my mind. Your words calms my soul. Having you makes living life easier. Your uplifting energy never fails to cheer me up, kahit ang kulit kulit mo aiiishhh. I want you to know that I am always here for you, I’ll do the best I can for you. Always. As we go on through our 2nd year, may our love last forever and keep us connected. Although medyo saed kasi di pa tayo magkasama sa ngayon but look at the brighter side, konti na lang ilang years na lang ang titiisin natin magsasama na tayo ulet. We’ll live our life together soon. Tapos malapit ka na rin umuwi hehe. After non ilang taon na lang ulet hihintayin natin diba. I badly miss you babu. Lagi kong hinihintay babutime natin kada araw kasi yan lang ang time ko sa buhay na nararamdaman ko na mahal ako. Kaya siguro sapat na sakin kahit di matagal minsan. All I want is to see you smile, for it brings joy to my heart. My only wish is  to be together with my best friend, girlfriend, wife and the love of my life once again. As I end this letter, sana maramdaman mo pagmamahal ko sayo. Sabi ko sayo last year babawi ako diba, eto na yon hehe. Since malapit na ang valentine’s day, Babu, will you be my valentine? Hehe. Pwede mong balikan tong letter na to pag malungkot ka or kung nammiss mo lang ako hehe. I will love you with all my heart. Let’s continue our story that is full of love. To more kulitan and laughter. Cheers mahal ko ^___^
+	</p>
+	<p>I love you always, Alyssa</p>
+	<p>-Niel</p>
+    </div>
+
+    <script>
+        const audioElement = document.getElementById("backgroundMusic");
+
+        // Play music when the user clicks on the page
+        function playMusic() {
+            if (audioElement.paused) {
+                audioElement.currentTime = 7;  // Start music from 7 seconds
+                audioElement.play();           // Play the audio
+            }
+        }
+
+        // Set the looping behavior
+        audioElement.addEventListener('timeupdate', function() {
+            // If the audio time reaches 207 seconds (3:27), reset it to 7 seconds
+            if (audioElement.currentTime >= 207) {
+                audioElement.currentTime = 7;
+            }
+        });
+
+        // Save the current timestamp when the page is unloaded (for later continuation)
+        window.onbeforeunload = () => {
+            localStorage.setItem("musicTimestamp", audioElement.currentTime);
+        };
+
+        // Retrieve the saved timestamp when the page is loaded again
+        window.onload = () => {
+            const savedTimestamp = localStorage.getItem("musicTimestamp");
+            if (savedTimestamp) {
+                audioElement.currentTime = parseFloat(savedTimestamp);
+                audioElement.play();  // Play the audio from the saved timestamp
+            }
+        };
+
+        const words = ["Press me", "Hello Babu ^__^", "Today is a special day.", "February 9, 2025", "It's....", "BAM DAYYYYY!!!!!!"];
+        const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]; // Image paths in the same folder as the HTML
+        let index = 0;
+
+        function moveText() {
+            const textElement = document.getElementById("text");
+            const imageElement = document.getElementById("image");
+            textElement.style.opacity = '0';
+            textElement.style.transform = `translateY(-20px)`;
+
+            setTimeout(() => {
+                index++;
+                if (index >= words.length) {
+                    // Hide the interactive text and image, and show the main content
+                    textElement.style.display = 'none';
+                    imageElement.style.display = 'none';
+
+                    const mainContent = document.getElementById("mainContent");
+                    mainContent.style.display = 'block'; // Show the main content
+                    return;
+                }
+                textElement.innerText = words[index];
+                textElement.style.opacity = '1';
+                textElement.style.transform = 'translateY(20px)';
+
+                // Show image starting from the second word (index 1)
+                if (index > 0) {
+                    // Show corresponding image
+                    imageElement.src = images[index - 1]; // Adjust index to match the images array
+                    imageElement.style.opacity = '1';
+
+                    const imageWidth = 200; // Width of the image
+                    const imageHeight = 200; // Height of the image
+
+                    // Calculate the maximum position for the image to ensure it stays inside the viewport
+                    const maxX = window.innerWidth - imageWidth; // Ensure image doesn't overflow to the right
+                    const maxY = window.innerHeight - imageHeight; // Ensure image doesn't overflow to the bottom
+
+                    // Calculate the "safe zone" around the center
+                    const safeZoneSize = 300; // Size of the area to avoid (around the center)
+                    const centerX = window.innerWidth / 2;
+                    const centerY = window.innerHeight / 2;
+
+                    let left, top;
+
+                    // Generate random position outside the safe zone, and make sure the whole image is outside
+                    do {
+                        left = Math.random() * maxX;
+                        top = Math.random() * maxY;
+
+                        // Ensure the image is outside the safe zone (center area) by checking the full image bounds
+                    } while (
+                        (left + imageWidth > centerX - safeZoneSize && left < centerX + safeZoneSize) && 
+                        (top + imageHeight > centerY - safeZoneSize && top < centerY + safeZoneSize)
+                    );
+
+                    imageElement.style.left = `${left}px`;
+                    imageElement.style.top = `${top}px`;
+                }
+            }, 500);
+        }
+
+        // Show next content when "Ready?" link is clicked
+        document.getElementById("readyLink").onclick = function() {
+            // Hide the main content first
+            document.getElementById("mainContent").style.visibility = 'hidden';
+
+            // Show next content
+            document.getElementById("nextContent").style.display = 'block';
+        };
+    </script>
 </body>
 </html>
-
-
